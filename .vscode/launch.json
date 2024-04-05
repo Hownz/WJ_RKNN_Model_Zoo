@@ -9,7 +9,11 @@
 			"name": "g++ 生成和调试活动文件", // 配置名称，将会在启动配置的下拉菜单中显示
 			"type": "cppdbg", // 配置类型，cppdbg对应cpptools提供的调试功能；可以认为此处只能是cppdbg
 			"request": "launch",// 请求配置类型，可以为launch（启动）或attach（附加）
-			"environment": [], // 环境变量
+			"environment": [
+				{
+					"name": "LD_LIBRARY_PATH", "value": "/home/orangepi/Desktop/WJ/proj/install/rk3588_linux_aarch64/rknn_wj_demo/lib"
+				}
+			], // 环境变量
 			"MIMode": "gdb", // 指定连接的调试器，可以为gdb或lldb。但我没试过lldb
 			"miDebuggerPath": "/usr/bin/gdb",
 			"cwd": "${workspaceFolder}/install/rk3588_linux_aarch64/rknn_wj_demo/", // dbug时当前的目录

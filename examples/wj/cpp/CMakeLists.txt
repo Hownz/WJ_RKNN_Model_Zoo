@@ -74,6 +74,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${LIBRKNNRT_INCLUDES}
 )
+
+# 安装 
 # 安装到当前目录，使其可在该位置被访问和使用
 # 访问权限以及访问路径设置
 install(TARGETS ${PROJECT_NAME} DESTINATION .)

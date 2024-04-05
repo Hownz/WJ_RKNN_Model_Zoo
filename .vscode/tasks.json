@@ -19,32 +19,20 @@
                 "isDefault":true
             }
         },
-        {
-            "label": "ld",
-			"type": "shell",
-            "command": "export LD_LIBRARY_PATH=./lib", 
-            "args": [
-            ],
-            "options": {
-			    // 进入build
-		        "cwd": "${fileDirname}"
-			},
-			"group": {
-                "kind":"build",
-                "isDefault":true
-            }
-        },
 		{
             "label": "exe",
 			"type": "shell",
-            "command": "./${fileBasename} model/yolov8.rknn model/bus.jpg", // 查看本机MinGW, linux下识别核心数
+            "command": "./wj model/yolov8.rknn model/bus.jpg", // 查看本机MinGW, linux下识别核心数
             "args": [
             ],
             "options": {
 			    // 进入build
 			    // "${workspaceFolder}/bin"：根下
 			    // "${fileDirname}"：当前文件的所在文件夹路径
-		        "cwd": "${fileDirname}"
+		        "cwd": "${workspaceFolder}/install/rk3588_linux_aarch64/rknn_wj_demo/",
+                "env": {
+                    "LD_LIBRARY_PATH": "/home/orangepi/Desktop/WJ/proj/install/rk3588_linux_aarch64/rknn_wj_demo/lib",
+                }
 			},
 			"group": {
                 "kind":"build",
@@ -55,7 +43,6 @@
             "label":"Build my project", // launch文件需要对应
             "dependsOn":[
                 "build-linux",
-                // "ld",
 				// "exe",                
             ]
         }
